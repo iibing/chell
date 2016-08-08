@@ -1,0 +1,49 @@
+.layout-aside .layout-sider > .ant-menu {
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.layout-aside .layout-sider > .ant-menu > .ant-menu-item {
+  margin: 16px 0;
+  padding-left: 0;
+}
+
+.layout-aside .layout-sider > .ant-menu > .ant-menu-item .nav-text {
+  vertical-align: baseline;
+  display: inline-block;
+}
+
+.layout-aside .layout-sider > .ant-menu > .ant-menu-item .anticon {
+  transition: font-size .3s;
+}
+
+.layout-aside-collapse .layout-sider > .ant-menu > .ant-menu-item {
+  transition: all 0s ease;
+}
+
+.layout-aside-collapse .layout-sider > .ant-menu > .ant-menu-item .anticon {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.layout-aside-collapse .layout-sider > .ant-menu > .ant-menu-item .nav-text {
+  display: none;
+}
+
+.layout-aside-collapse .layout-sider > .ant-menu > .ant-menu-item:hover {
+  background: #2db7f5;
+  color: #fff;
+  transition: all 0s ease;
+}
+
+.layout-aside-collapse .layout-sider > .ant-menu > .ant-menu-item:hover .nav-text {
+  display: inline-block;
+  vertical-align: top;
+  background: #2db7f5;
+  color: #fff;
+  padding-right: 16px;
+  border-radius: 0 5px 5px 0;
+}
+.nav-link {
+    width: 100%;
+}

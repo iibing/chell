@@ -1,0 +1,29 @@
+.chat-contact-pannel {
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 0;
+    height: 100%;
+}
+
+.chat-list-header {
+    color: rgba(0, 0, 0, 0.541176);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 48px;
+    padding-left: 16px;
+    width: 100%;
+}
+
+.recent-chat-list {
+    border-bottom: 1px solid rgb(217, 217, 217)
+}
+
+.ant-collapse {
+    border-radius: 0;
+    border: 0;
+}
+
+.ant-collapse-content {
+    padding-left: 0;
+    padding-right: 0
+}
+

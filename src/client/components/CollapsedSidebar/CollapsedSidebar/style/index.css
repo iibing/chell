@@ -1,0 +1,15 @@
+.layout-aside .layout-sider {
+  width: 224px;
+  background: #404040;
+  position: absolute;
+  overflow: visible;
+  padding-bottom: 24px;
+  height: 100%;
+  transition: all 0.3s ease;
+}
+
+.layout-aside-collapse .layout-sider {
+  width: 64px;
+  transition: all 0.3s ease;
+}
+

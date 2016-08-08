@@ -1,0 +1,33 @@
+.contact-message-icon {
+    position: absolute;
+    height: 24px;
+    width: 24px;
+    font-size: 20px;
+    top: 4px;
+    margin: 12px;
+    right: 4px;
+}
+.contact-avator {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    position: absolute;
+    top: 8px;
+    left: 16px;
+}
+
+.contact-list-item:hover {
+    background-color: #2db7f5;
+    color: #fff;
+}
+
+.contact-list-item {
+    font-family: Roboto, sans-serif;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: inherit;
+    line-height: 16px;
+    margin-left: 0px;
+    padding: 20px 56px 20px 72px;
+    position: relative;
+}

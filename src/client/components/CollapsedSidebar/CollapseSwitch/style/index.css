@@ -1,0 +1,19 @@
+.layout-aside .aside-action {
+    height: 100%;
+    width: 224px;
+    position: fixed;
+    bottom: 0;
+    background: #212121;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.layout-aside-collapse .aside-action {
+    width: 64px;
+    transition: all 0.3s ease;
+}
+.aside-action .aside-action-text {
+    padding-left: 15px;
+}

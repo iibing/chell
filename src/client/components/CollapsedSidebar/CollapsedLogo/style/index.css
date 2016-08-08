@@ -1,0 +1,14 @@
+.layout-aside .layout-logo {
+  width: 150px;
+  height: 32px;
+  background: #333;
+  border-radius: 6px;
+  margin: 16px 24px 16px 28px;
+  transition: all 0.3s ease;
+}
+
+.layout-aside-collapse .layout-logo {
+  width: 32px;
+  margin: 16px;
+  transition: all 0.3s ease;
+}

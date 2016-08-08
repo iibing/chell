@@ -1,0 +1,21 @@
+.chat-window-header {
+    position: relative;
+    width: 676px;
+    height: 51px;
+    margin: 0 auto;
+    border-bottom: 1px solid #ddd;
+    border-bottom-style: solid;
+}
+.chat-header-title {
+    text-align: center;
+    line-height: 51px;
+    cursor: pointer;
+    color: #333;
+    font-size: 16px;
+}
+.chat-title-text {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 2px;
+    color: grey;
+}

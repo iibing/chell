@@ -1,0 +1,16 @@
+.layout-aside .logout-action {
+    position: fixed;
+    bottom: 10px;
+    left: 24px;
+    color: #fff;
+    text-align: center;
+    line-height: 42px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.layout-aside-collapse .logout-action {
+    transition: all 0.3s ease;
+}
+.logout-action .logout-action-text {
+    padding-left: 15px;
+}

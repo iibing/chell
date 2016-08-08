@@ -1,0 +1,10 @@
+
+body {
+    background-color: #ececec;
+}
+
+
+.layout-aside {
+  position: relative;
+  min-height: 100%;
+}

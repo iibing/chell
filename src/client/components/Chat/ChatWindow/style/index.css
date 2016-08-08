@@ -1,0 +1,73 @@
+.chatWindow {
+    border: 1px solid rgb(217, 217, 217);
+    border-radius: 2px;
+    width: 80%;
+    height: 400px;
+    background: #eee;
+}
+
+.chat-text-area {
+    border-bottom: 1px solid rgb(217, 217, 217);
+    width: 100%;
+    height: 80%;
+}
+.chat-text-time {
+    padding-top: 20px;
+    text-align: center;
+    color: #a3a7ae;
+}
+.chat-message-bubble {
+    padding: 15px 18px 0;
+}
+.chat-window-avator {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.chat-message-bubble-box {
+    position: relative;
+    float: left;
+}
+.chat-buddle-content {
+    float: left;
+    margin-left: 11px;
+    background: #fff;
+    border: 1px solid #e5e5e5;
+    position: relative;
+    max-width: 392px;
+    padding: 11px 16px;
+    margin-top: 1px;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+}
+.chat-buddle-arraw {
+    left: -11px;
+    position: absolute;
+    top: 10px;
+}
+.chat-buddle-arraw i, .chat-buddle-arraw em {
+    display: inline-block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    vertical-align: top;
+}
+.chat-buddle-arraw i {
+    border-top-color: #fff;
+    color: #fff;
+    margin-left: 3px;
+    border-width: 4px;
+}
+.chat-buddle-arraw em {
+    border-top-color: #fff;
+    margin: 0 0 0 -6px;
+    color: #fff;
+    border-width: 4px;
+}
+.chat-input-area {
+    width: 100%;
+    height: 20%;
+}
