@@ -30,15 +30,15 @@ const CollapsedMenu = () => (
             </Link>
         </Menu.Item>
         <Menu.Item key="calender">
-            <Icon type="calendar" />
-            <span className="nav-text">Calender</span>
+            <Link to='/calendar'>
+                <Icon type="calendar"/>
+                <span className="nav-text">Calender</span>
+            </Link>
         </Menu.Item>
         <Menu.Item key="config">
             <Icon type="setting"/>
             <span className="nav-text">Config</span>
         </Menu.Item>
-        
-        
     </Menu>
 )
 

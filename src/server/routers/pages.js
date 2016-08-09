@@ -40,6 +40,9 @@ const pagesRouter = (router, loadPageFromMemory) => {
     router.get('/config',(req,res) => {
         sendPage(loadPageFromMemory, homePage, res)
     }),
+    router.get('/calendar',(req,res) => {
+        sendPage(loadPageFromMemory, homePage, res)
+    })
     router.get('/team',(req,res) => {
         sendPage(loadPageFromMemory, homePage, res)
     })

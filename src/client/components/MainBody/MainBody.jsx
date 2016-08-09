@@ -1,7 +1,6 @@
 import React from 'react'
-
 import CollapsedSidebar from '../CollapsedSidebar'
-import MainPannel from '../MainPannel'
+import MainPanel from '../MainPanel'
 import styleIgnored from './style'
 
 class MainBody extends React.Component {
@@ -21,7 +20,7 @@ class MainBody extends React.Component {
         return (
             <div className={collapse? 'layout-aside layout-aside-collapse': 'layout-aside'}>
                 <CollapsedSidebar collapse={this.state.collapse} onCollapseChange={this.onCollapseChange} logout={this.logout}/>
-                <MainPannel>{this.props.children}</MainPannel>
+                <MainPanel>{this.props.children}</MainPanel>
             </div>
         )
     }

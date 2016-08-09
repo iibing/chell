@@ -2,8 +2,7 @@
   width: 224px;
   background: #404040;
   position: absolute;
-  overflow: visible;
-  padding-bottom: 24px;
+  padding-bottom: 0;
   height: 100%;
   transition: all 0.3s ease;
 }

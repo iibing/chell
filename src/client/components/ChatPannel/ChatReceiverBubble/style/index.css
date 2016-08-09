@@ -1,0 +1,44 @@
+.chat-receiver-bubble {
+    padding: 0 18px 0;
+    min-width: 400px;
+    float: right;
+}
+.chat-receiver-avator{
+    float: right;
+    width: 50px;
+}
+.chat-window-avator {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+.chat-receiver-bubble-content {
+    cursor: pointer;
+    float: right;
+    margin-right: 11px;
+    background: rgb(131, 209, 245);
+    border: 1px solid #e5e5e5;
+    position: relative;
+    max-width: 392px;
+    padding: 11px 16px;
+    margin-top: 1px;
+    border-radius: 5px;
+}
+.chat-receiver-bubble-arrow {
+    right: -11px;
+    position: absolute;
+    top: 10px;
+}
+
+.chat-receiver-bubble-arrow i {
+    display: inline-block;
+    border-top-color: rgb(131, 209, 245);
+    color: rgb(131, 209, 245);
+    width: 0;
+    height: 0;
+    margin-right: 3px;
+    border-width: 4px;
+    border-style: solid;
+    border-bottom-color: transparent;
+    border-right-color: transparent
+}
