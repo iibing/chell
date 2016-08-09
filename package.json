@@ -2,9 +2,15 @@
   "name": "chell",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server/app.js",
+  "engines": {
+      "node": "6.3.1"
+  },
   "scripts": {
-    "hmr": "cross-env NODE_ENV=HMR node src/server/app.js"
+    "hmr": "cross-env NODE_ENV=HMR node src/server/app.js",
+    "start": "node src/server/app.js",
+    "build": "cross-env NODE_ENV=production webpack --config config/webpack.config.js -p --profile --progress --colors --display-error-details",
+    "postinstall": "node_modules/.bin/webpack -p --config config/webpack.config.js --progress"
   },
   "author": "inbin",
   "license": "MIT",
