@@ -1,9 +1,0 @@
-.task-card {
-    width: 99%;
-    margin: 5px auto;
-    cursor: move;
-}
-
-.task-card:hover {
-    background-color: #eaf8fe;
-}

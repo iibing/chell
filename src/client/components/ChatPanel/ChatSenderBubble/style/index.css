@@ -3,11 +3,11 @@
     float: left;
 }
 
-.chat-sender-avator {
+.chat-sender-avatar {
     float: left;
     width: 50px;
 }
-.chat-window-avator {
+.chat-window-avatar {
     border-radius: 50%;
     height: 40px;
     width: 40px;

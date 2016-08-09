@@ -6,8 +6,8 @@ const propTypes = {
 
 const ChatReceiverBubble = ({message}) => (
     <div className="chat-receiver-bubble">
-        <div className='chat-receiver-avator'>
-            <img src="http://www.material-ui.com/images/ok-128.jpg" className='chat-window-avator'/>
+        <div className='chat-receiver-avatar'>
+            <img src="http://www.material-ui.com/images/ok-128.jpg" className='chat-window-avatar'/>
         </div>
         <div className="chat-receiver-bubble-content">
             <div className="chat-receiver-bubble-arrow">

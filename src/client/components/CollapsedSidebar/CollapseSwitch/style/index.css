@@ -17,3 +17,16 @@
 .aside-action .aside-action-text {
     padding-left: 15px;
 }
+
+.my-avatar {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin: 10px auto;
+}
+
+.menu-icon {
+    position: fixed;
+    top: 5px;
+    left: 25px;
+}

@@ -1,11 +1,19 @@
 html, body {
     margin: 0;
     background-color: #ececec;
-    height:100%;
+    height: 100%;
     overflow: hidden;
 }
-
 .layout-aside {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
+}
+div::-webkit-scrollbar {
+    width: 5px;
+}
+div::-webkit-scrollbar-thumb {
+    border-radius: 9px;
+    -webkit-box-shadow: inset 0 0 3px #888;
+    box-shadow: inset 0 0 3px #888;
+    background-color: #999;
 }

@@ -1,5 +1,6 @@
 import React, {PropTypes} from 'react'
 import {Card} from 'antd'
+import { DragSource } from 'react-dnd'
 import styleIgnored from './style'
 
 const propTypes = {
@@ -7,7 +8,7 @@ const propTypes = {
 }
 
 const TaskCard = ({task}) => (
-    <Card title={task.title} className='task-card'>
+    <Card title={task.title} className='task-card' draggable={true}>
         <p>{task.summary}</p>
     </Card>
 )
