@@ -4,14 +4,56 @@
     cursor: move;
     margin-top: 10px;
 }
-
 .task-card:hover {
     background-color: #eaf8fe;
 }
-
 .task-card-dragging {
     opacity: 0
 }
 .task-card .ant-card-body {
-    border-left: 4px solid green;
+    border-left: 5px solid;
+}
+.task-card.task-green-left-boarder .ant-card-body {
+    border-left-color: green;
+}
+.task-card.task-red-left-boarder .ant-card-body {
+    border-left-color: red;
+}
+.task-card.task-yellow-left-boarder .ant-card-body {
+    border-left-color: #fa0;
+}
+.asignee-avator {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    margin-top: -10px;
+    margin-right: -18px;
+}
+
+.task-more-action {
+    float: left;
+    background-color: rgba(255, 0, 0, 0);
+    margin-top: -8px;
+    padding-right: 10px;
+    width: 40%;
+}
+.task-more-action-btn {
+    margin-right: 10px;
+}
+
+.task-more-action-btn .ant-btn-circle.ant-btn-lg {
+    height: 40px;
+    width: 40px;
+    font-size: 25px;
+}
+
+.task-card-content {
+    margin-left: -65%;
+    transition:margin-left 0.5s;
+    height: 100%;
+    width: 150%;
+    
+}
+.task-card-content:hover {
+    margin-left: 0;
 }

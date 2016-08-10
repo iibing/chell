@@ -15,37 +15,44 @@ class TaskPanel extends React.Component {
                     id: 1,
                     title: 'CHELL-1',
                     summary: 'Add TaskPannel',
-                    priority: 0
+                    priority: 0,
+                    score: 5
                 }, {
                     id: 2,
                     title: 'CHELL-2',
                     summary: 'Add Chat Pannel',
-                    priority: 1
+                    priority: 1,
+                    score: 5
                 }, {
                     id: 3,
                     title: 'CHELL-3',
                     summary: 'Add Chat Pannel',
-                    priority: 2
+                    priority: 2,
+                    score: 2
                 }, {
                     id: 4,
                     title: 'CHELL-4',
                     summary: 'Add Chat Pannel',
-                    priority: 0
+                    priority: 0,
+                    score: 4
                 }, {
                     id: 5,
                     title: 'CHELL-5',
                     summary: 'Add Chat Pannel',
-                    priority: 1
+                    priority: 1,
+                    score: 6
                 }, {
                     id: 6,
                     title: 'CHELL-6',
                     summary: 'Add Chat Pannel',
-                    priority: 2
+                    priority: 2,
+                    score: 3
                 }, {
                     id: 7,
                     title: 'CHELL-7',
                     summary: 'Add Chat Pannel',
-                    priority: 1
+                    priority: 1,
+                    score: 7
                 }
             ],
             wipTasks: [
@@ -53,7 +60,8 @@ class TaskPanel extends React.Component {
                     id: 3,
                     title: 'CHELL-8',
                     summary: 'Add TaskPannel',
-                    priority: 0
+                    priority: 0,
+                    score: 8
                 }
             ],
             modal2Visible: false
@@ -75,9 +83,9 @@ class TaskPanel extends React.Component {
             <div className='task-pannel'>
                 <TaskPanelHeader project = {this.project}/>
                 <Row gutter={5}>
-                    <Col span={6}><TaskLane tasks={this.state.newTasks} laneName='TODO'/></Col>
-                    <Col span={6}><TaskLane tasks={this.state.wipTasks} laneName='WIP'/></Col>
-                    <Col span={6}><TaskLane laneName='DONE'/></Col>
+                    <Col span={7}><TaskLane tasks={this.state.newTasks} laneName='TODO'/></Col>
+                    <Col span={7}><TaskLane tasks={this.state.wipTasks} laneName='WIP'/></Col>
+                    <Col span={7}><TaskLane laneName='DONE'/></Col>
                 </Row>
                 <AddTaskButton showCreateTaskModal={this.showCreateTaskModal}/>
                 <TaskModal modal2Visible={this.state.modal2Visible} setModal2Visible={this.setModal2Visible} />

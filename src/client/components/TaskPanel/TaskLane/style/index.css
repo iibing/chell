@@ -13,8 +13,8 @@
     background: #fff;
     padding: 5px 5px;
     min-height: 600px;
-    border: 2px solid #eee;
-    //border-left: 2px solid #ccc;
+    //border: 2px solid #eee;
+    border-left: 2px solid #eee;
     //border-right: 3px solid #ccc;
 }
 
