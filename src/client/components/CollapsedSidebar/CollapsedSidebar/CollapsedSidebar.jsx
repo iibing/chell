@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react'
-
+import {Affix} from 'antd'
 import CollapsedMenu from '../CollapsedMenu'
 import Logout from '../Logout'
 import CollapseSwitch from '../CollapseSwitch'
@@ -15,8 +15,8 @@ const propTypes = {
 
 const CollapsedSidebar = ({collapse, onCollapseChange, logout}) => (
     <aside className='layout-sider'>
-        <CollapsedLogo />
-        <CollapsedMenu />
+        <CollapsedLogo/>
+        <CollapsedMenu/>
         <CollapseSwitch collapse={collapse} onCollapseChange={onCollapseChange}/>
         <Logout collapse={collapse} logout={logout}/>
     </aside>

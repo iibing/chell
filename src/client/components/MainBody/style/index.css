@@ -2,7 +2,7 @@ html, body {
     margin: 0;
     background-color: #ececec;
     height: 100%;
-    overflow: hidden;
+    //overflow: hidden;
 }
 .layout-aside {
     position: relative;

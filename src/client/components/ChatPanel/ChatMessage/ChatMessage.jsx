@@ -5,13 +5,20 @@ import ChatReceiverBubble from '../ChatReceiverBubble'
 import styleIgnored from './style'
 
 class ChatMessage extends React.Component {
+    constructor(props) {
+        super(props)
+        this.shouldScrollBottom = true
+    }
     componentDidMount() {
-        let chatMessageDiv = document.getElementById('chatMessage')
-        chatMessageDiv.scrollTop = chatMessageDiv.scrollHeight
+        // use the refs to replace getElementById
+        if (this.shouldScrollBottom) {
+            let chatMessageDiv = this.refs.chatMessage
+            chatMessageDiv.scrollTop = chatMessageDiv.scrollHeight
+        }
     }
     render() {
         return (
-            <div id='chatMessage' className='chat-text-area'>
+            <div ref='chatMessage' id='chatMessage' className='chat-text-area'>
                 <p className='chat-text-time'>2016-08-08 21:00:00</p>
                 <ChatSenderBubble message='Hello from Jimmy'/>
                 <p className='chat-text-time'></p>

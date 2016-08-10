@@ -1,0 +1,13 @@
+.add-task-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    
+}
+
+.add-task-button .ant-btn-lg {
+    height: 50px;
+    width: 50px;
+    //font-weight: bold;
+    font-size: 25px;
+}

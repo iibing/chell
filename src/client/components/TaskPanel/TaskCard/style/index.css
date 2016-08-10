@@ -2,8 +2,16 @@
     width: 99%;
     margin: 5px auto;
     cursor: move;
+    margin-top: 10px;
 }
 
 .task-card:hover {
     background-color: #eaf8fe;
+}
+
+.task-card-dragging {
+    opacity: 0
+}
+.task-card .ant-card-body {
+    border-left: 4px solid green;
 }

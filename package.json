@@ -4,7 +4,7 @@
   "description": "",
   "main": "src/server/app.js",
   "engines": {
-      "node": "6.3.1"
+    "node": "6.3.1"
   },
   "scripts": {
     "hmr": "cross-env NODE_ENV=HMR node src/server/app.js",
@@ -36,10 +36,13 @@
   "dependencies": {
     "antd": "^1.7.0",
     "babel-polyfill": "^6.13.0",
+    "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "express": "^4.14.0",
     "log4js": "^0.6.38",
     "react": "^15.3.0",
+    "react-dnd": "^2.1.4",
+    "react-dnd-html5-backend": "^2.1.2",
     "react-dom": "^15.3.0",
     "react-redux": "^4.4.5",
     "react-router": "^2.6.1",

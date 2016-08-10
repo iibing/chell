@@ -8,9 +8,16 @@
 */
 
 .layout-lane {
-    border: 1px solid #eee;
+    //border: 1px solid #eee;
     border-radius: 5px;
     background: #fff;
     padding: 5px 5px;
-    
+    min-height: 600px;
+    border: 2px solid #eee;
+    //border-left: 2px solid #ccc;
+    //border-right: 3px solid #ccc;
+}
+
+.layout-lane-drag-over {
+  background-color: #eee;
 }
