@@ -1,4 +1,5 @@
 .task-pannel {
     overflow: auto; 
     overflow-x: hidden;
+    min-width: 1200px;
 }

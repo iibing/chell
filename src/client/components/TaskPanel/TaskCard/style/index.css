@@ -3,6 +3,7 @@
     margin: 5px auto;
     cursor: move;
     margin-top: 10px;
+    min-width: 300px;
 }
 .task-card:hover {
     background-color: #eaf8fe;
