@@ -1,3 +1,3 @@
-import TaskAttachement from './TaskAttachement'
+import TaskAttachment from './TaskAttachment'
 
-export default TaskAttachement
+export default TaskAttachment

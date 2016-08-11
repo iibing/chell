@@ -1,6 +1,6 @@
 import React from 'react'
 import {Upload, Icon} from 'antd'
-
+import styleIgnored from './style'
 const Dragger = Upload.Dragger
 
 const props = {
@@ -9,12 +9,12 @@ const props = {
     action: '/upload.do'
 }
 
-const TaskAttachement = () => (
-    <div style={{height: '70px', width:'200px'}}>
+const TaskAttachment = () => (
+    <div className='task-attachment'>
         <Dragger {...props}>
             <Icon type="plus"/>
         </Dragger>
     </div>
 )
 
-export default TaskAttachement
+export default TaskAttachment

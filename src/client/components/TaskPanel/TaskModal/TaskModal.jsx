@@ -21,15 +21,16 @@ class TaskModal extends React.Component {
             <div className='task-creation-modal'>
                 <Modal 
                     title="Create Task" 
-                    wrapClassName="vertical-center-modal" 
-                    closable={false} 
-                    width={700} 
-                    visible={this.props.modal2Visible} 
+                    style={{ top: 20 }}
+                    closable={true} 
+                    width={600} 
+                    visible={this.props.modal2Visible}
+                    maskClosable={false}
                     okText='Create' 
                     cancelText='Cancel' 
                     onOk={() => this.setModal2Visible(false)} 
                     onCancel={() => this.setModal2Visible(false)}>
-                    <TaskModalForm />
+                    <TaskModalForm submitForm={() => this.setModal2Visible(false)}/>
                 </Modal>
             </div>
         )

@@ -1,9 +1,9 @@
 import React from 'react'
-import {Form, Input} from 'antd'
+import {Form, Input, Button} from 'antd'
 
 import PrioritySlider from '../PrioritySlider'
 import TaskAttachment from '../TaskAttachment'
-import ProjectSelect from '../ProjectSelect'
+import Selection from '../Selection'
 import TaskDatePicker from '../TaskDatePicker'
 
 const FormItem = Form.Item
@@ -19,28 +19,43 @@ const largeFormItemLayout = {
         span: 18
     }
 }
-const smallFormWrapperCol = {
-    span: 10
+
+const tinyFormWrapperCol = {
+    span: 6
 }
+
 
 const projects = [
     {
-        value: 'CHELL',
-        name: 'CHELL'
+        value: 'CHELL'
     }, {
-        value: 'PHOENIX',
-        name: 'PHOENIX'
+        value: 'PHOENIX'
     }, {
-        value: 'PRDM',
-        name: 'PRDM'
+        value: 'PRDM'
     }
+]
+
+const taskTypes = [
+    {
+        value: 'feature'
+    },
+    {
+        value: 'bugfix'
+    },
+    {
+        value: 'story'
+    }
+    
 ]
 class TaskModalForm extends React.Component {
     render() {
         return (
             <Form horizontal>
-                <FormItem label='Project' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
-                    <ProjectSelect projects={projects} defaultValue='CHELL'/>
+                <FormItem label='Project' labelCol={labelCol} wrapperCol={{span:10}}>
+                    <Selection selections = {projects}  defaultValue='CHELL' />
+                </FormItem>
+                <FormItem label='Task Type' labelCol={labelCol} wrapperCol={tinyFormWrapperCol}>
+                    <Selection selections = {taskTypes}  defaultValue='feature' />
                 </FormItem>
                 <FormItem label='Summary' {...largeFormItemLayout}>
                     <Input ref='taskSummaryInput' id="taskSummaryInput" placeholder=""/>
@@ -48,15 +63,16 @@ class TaskModalForm extends React.Component {
                 <FormItem label='Description' {...largeFormItemLayout}>
                     <Input type="textarea" id="taskDescriptionTextarea" rows="3"/>
                 </FormItem>
-                <FormItem label='Priority' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
+                <FormItem label='Priority' labelCol={labelCol} wrapperCol={tinyFormWrapperCol}>
                     <PrioritySlider/>
                 </FormItem>
-                <FormItem label='Attachement' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
+                <FormItem label='Attachement' labelCol={labelCol} wrapperCol={tinyFormWrapperCol}>
                     <TaskAttachment/>
                 </FormItem>
-                <FormItem label='Due Date' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
+                <FormItem label='Due Date' labelCol={labelCol} wrapperCol={tinyFormWrapperCol}>
                     <TaskDatePicker />
                 </FormItem>
+                <Button className='task-submit-btn' size='large' type='primary' onClick={this.props.submitForm}>Create</Button>
             </Form>
         )
     }

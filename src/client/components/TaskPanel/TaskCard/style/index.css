@@ -13,12 +13,18 @@
 }
 .task-card:hover {
     background-color: #eaf8fe;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 }
 .task-card-dragging {
     opacity: 0
 }
+
+.ant-card {
+    border-radius: 3px;
+}
 .task-card .ant-card-body {
     border-left: 5px solid;
+    border-radius: 3px;
 }
 .task-card.task-green-left-boarder .ant-card-body {
     border-left-color: green;
@@ -34,6 +40,10 @@
     background: #fff;
 }
 */
+
+.task-card .ant-card-head {
+    border-radius: 3px;
+}
 
 .asignee-avator {
     border-radius: 50%;

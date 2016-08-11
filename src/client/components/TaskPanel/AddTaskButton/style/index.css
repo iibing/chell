@@ -1,13 +1,15 @@
 .add-task-button {
     position: fixed;
-    bottom: 30px;
-    right: 30px;
-    
+    bottom: 20px;
+    right: 20px;
 }
 
 .add-task-button .ant-btn-lg {
-    height: 50px;
-    width: 50px;
-    //font-weight: bold;
-    font-size: 25px;
+    height: 56px;
+    width: 56px;
+    font-weight: bold;
+    font-size: 19px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+    background-color: #d23f31;
+    border: #d23f31;
 }

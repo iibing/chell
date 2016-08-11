@@ -10,15 +10,16 @@ const prioritySlider = {
     },
     1: {
         style: {
-            color: '#fa0'
+            color: '#fa0'            
         },
         label: 'Medium'
     },
     2: {
         style: {
-            color: 'red'
+            color: 'red',
+            'font-weight': 'bold'
         },
-        label: <strong>High</strong>
+        label: 'High'
     }
 }
 

@@ -1,7 +1,19 @@
 .ant-modal-content {
     border-radius: 3px;
+    position: relative;
 }
 
-.ant-btn-lg {
-    border-radius: 3px;
+.task-submit-btn.ant-btn-lg {
+    border-radius: 2px;
+}
+
+.ant-modal-footer {
+    display: none;
+}
+
+.task-submit-btn {
+    position: absolute;
+    right: 45px;
+    bottom: 35px;
+    //box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
 }
