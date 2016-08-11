@@ -17,12 +17,6 @@ const CollapsedMenu = () => (
                 <span className="nav-text">Tasks</span>
             </Link>
         </Menu.Item>
-        <Menu.Item key="projects">
-            <Link to='/tasks'>
-                <Icon type="menu-unfold"/>
-                <span className="nav-text">Projects</span>
-            </Link>
-        </Menu.Item>
         <Menu.Item key="team">
             <Link to='/team'>
                 <Icon type="team"/>
@@ -35,9 +29,11 @@ const CollapsedMenu = () => (
                 <span className="nav-text">Calender</span>
             </Link>
         </Menu.Item>
-        <Menu.Item key="config">
-            <Icon type="setting"/>
-            <span className="nav-text">Config</span>
+        <Menu.Item key="settings">
+            <Link to='/settings'>
+                <Icon type="setting"/>
+                <span className="nav-text">Settings</span>
+            </Link>
         </Menu.Item>
     </Menu>
 )

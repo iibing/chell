@@ -1,8 +1,14 @@
 import React from 'react'
-import {Form, Input, Button, Select, Checkbox} from 'antd'
+import {Form, Input} from 'antd'
+
+import PrioritySlider from '../PrioritySlider'
+import TaskAttachment from '../TaskAttachment'
+import ProjectSelect from '../ProjectSelect'
+import TaskDatePicker from '../TaskDatePicker'
 
 const FormItem = Form.Item
-const Option = Select.Option
+
+import styleIgnored from './style'
 
 const labelCol = {
     span: 5
@@ -17,22 +23,39 @@ const smallFormWrapperCol = {
     span: 10
 }
 
+const projects = [
+    {
+        value: 'CHELL',
+        name: 'CHELL'
+    }, {
+        value: 'PHOENIX',
+        name: 'PHOENIX'
+    }, {
+        value: 'PRDM',
+        name: 'PRDM'
+    }
+]
 class TaskModalForm extends React.Component {
     render() {
         return (
             <Form horizontal>
-                <FormItem label='Task Summary' {...largeFormItemLayout}>
+                <FormItem label='Project' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
+                    <ProjectSelect projects={projects} defaultValue='CHELL'/>
+                </FormItem>
+                <FormItem label='Summary' {...largeFormItemLayout}>
                     <Input ref='taskSummaryInput' id="taskSummaryInput" placeholder=""/>
                 </FormItem>
-                <FormItem label='Project' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
-                    <Select id="projectSelect" size="large" defaultValue="CHELL" onChange={(value)=>console.log(value)}>
-                        <Option value="CHELL">CHELL</Option>
-                        <Option value="PHOENIX">PHOENIX</Option>
-                        <Option value="PRDM">PRDM</Option>
-                    </Select>
-                </FormItem>
                 <FormItem label='Description' {...largeFormItemLayout}>
-                    <Input type="textarea" id="taskDescriptionTextarea" rows="4" />
+                    <Input type="textarea" id="taskDescriptionTextarea" rows="3"/>
+                </FormItem>
+                <FormItem label='Priority' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
+                    <PrioritySlider/>
+                </FormItem>
+                <FormItem label='Attachement' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
+                    <TaskAttachment/>
+                </FormItem>
+                <FormItem label='Due Date' labelCol={labelCol} wrapperCol={smallFormWrapperCol}>
+                    <TaskDatePicker />
                 </FormItem>
             </Form>
         )

@@ -1,2 +1,9 @@
 .calendar-pannel {
+    position: relative;
+}
+
+.calendar-pannel-head {
+    position: absolute;
+    top: 0;
+    left: 0;
 }

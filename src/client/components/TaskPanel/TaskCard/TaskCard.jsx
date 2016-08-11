@@ -1,5 +1,5 @@
 import React, {PropTypes} from 'react'
-import {Card, Button, Tag, Badge} from 'antd'
+import {Card, Button, Tag, Icon} from 'antd'
 import classNames from 'classnames'
 import styleIgnored from './style'
 
@@ -8,7 +8,7 @@ const propTypes = {
 }
 
 const priorityColors = ['red', 'yellow', 'green']
-const taskPriorities = ['H', 'M', 'L']
+//const taskPriorities = ['H', 'M', 'L']
 
 class TaskCard extends React.Component {
     constructor(props) {
@@ -47,7 +47,10 @@ class TaskCard extends React.Component {
         }}/>
         */
         const assigneeAvator = <div><img src="http://www.material-ui.com/images/ok-128.jpg" className='asignee-avator'/></div>
-
+        
+        const tagAgeClassName = classNames('task-age-tag',{'yound-age':task.age.value < 3,'old-age':task.age.value >=3&task.age.value< 6, 'perm-age':task.age.value >= 6})
+        //const tagAgeClassName = classNames('task-age-tag')
+        
         const cardContent = (
             <div className='task-card-content'>
                 <div className='task-more-action' draggable={false}>
@@ -56,18 +59,21 @@ class TaskCard extends React.Component {
                     <Button className='task-more-action-btn' size='large' type="primary" shape="circle" icon="eye"/>
                 </div>
                 <div>{task.summary}</div>
+                <div className={tagAgeClassName}>
+                    <Tag >{task.age.text}</Tag>
+                </div>
             </div>
         )
 
         return (
-            <Card title={task.title} className={cardClassName} draggable={true} onDragStart={this.dragStart} onDragEnd={this.dragEnd} extra={assigneeAvator}>
-
-                {this.state.isDragging
-                    ? 
-                    <div>{task.summary}</div>
-                    :cardContent}
-
-            </Card>
+            <div className='task-card-container'>
+                <Card title={task.title} className={cardClassName} extra={assigneeAvator} draggable={true} onDragStart={this.dragStart} onDragEnd={this.dragEnd}>
+                    {this.state.isDragging
+                        ? <div>{task.summary}</div>
+                        : cardContent}
+                </Card>
+                <Tag className='task-type-tag'>{task.type}</Tag>
+            </div>
 
         )
     }

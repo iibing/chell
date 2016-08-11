@@ -22,7 +22,6 @@ const sendPage = (loadPageFromMemory, pagePath, res) => {
     }
 }
 
-
 const homePage = path.join(pagesPath, '/home.html')
 
 const pagesRouter = (router, loadPageFromMemory) => {
@@ -37,7 +36,7 @@ const pagesRouter = (router, loadPageFromMemory) => {
     router.get('/projects',(req,res) => {
         sendPage(loadPageFromMemory, homePage, res)
     }),
-    router.get('/config',(req,res) => {
+    router.get('/settings',(req,res) => {
         sendPage(loadPageFromMemory, homePage, res)
     }),
     router.get('/calendar',(req,res) => {
@@ -45,8 +44,7 @@ const pagesRouter = (router, loadPageFromMemory) => {
     })
     router.get('/team',(req,res) => {
         sendPage(loadPageFromMemory, homePage, res)
-    })
-    
+    })    
 }
 
 module.exports = pagesRouter

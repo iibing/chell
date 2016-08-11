@@ -4,6 +4,7 @@ import MainBody from './components/MainBody'
 import TaskPanel from './components/TaskPanel'
 import ChatPanel from './components/ChatPanel'
 import CalendarPanel from './components/CalendarPanel'
+import SettingsPanel from './components/SettingsPanel'
 import {Router, Route, browserHistory,IndexRoute} from 'react-router'
 import {syncHistoryWithStore} from 'react-router-redux'
 
@@ -25,6 +26,7 @@ render(
                 <Route path="/tasks" component={TaskPanel}/>
                 <Route path="/team" component={ChatPanel}/>
                 <Route path='/calendar' component={CalendarPanel} />
+                <Route path='/settings' component={SettingsPanel} />
             </Route>
         </Router>
     </Provider>,

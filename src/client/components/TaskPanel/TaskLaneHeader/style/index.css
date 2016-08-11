@@ -1,8 +1,10 @@
 .lane-header {
     margin: 5px auto;
     width: 95%;
-    border-bottom: 1px solid #ececec;
+    //border-bottom: 1px solid #ececec;
+    border-bottom: 1px solid #ddd;
     padding-bottom: 5px;
+    margin-bottom: 7px;
 }
 
 .lane-task-number {
@@ -16,7 +18,6 @@
     padding-right: 25px;
 }
 .lane-name {
-    //display: inline;
     font-size: 13px;
     //color: #888;
     font-family: Arial, Sans-serif;

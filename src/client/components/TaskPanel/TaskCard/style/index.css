@@ -1,9 +1,15 @@
+.task-card-container {
+    position: relative;
+}
+
 .task-card {
     width: 99%;
     margin: 5px auto;
     cursor: move;
-    margin-top: 10px;
     min-width: 300px;
+    position: relative;
+    //background-color: rgb(250,250,250);
+    background-color: #fff;
 }
 .task-card:hover {
     background-color: #eaf8fe;
@@ -23,6 +29,12 @@
 .task-card.task-yellow-left-boarder .ant-card-body {
     border-left-color: #fa0;
 }
+/*
+.task-card .ant-card-head {
+    background: #fff;
+}
+*/
+
 .asignee-avator {
     border-radius: 50%;
     height: 40px;
@@ -49,12 +61,44 @@
 }
 
 .task-card-content {
+    margin-top:5%;
     margin-left: -65%;
     transition:margin-left 0.5s;
     height: 100%;
     width: 150%;
-    
 }
+
 .task-card-content:hover {
     margin-left: 0;
+}
+
+.task-age-tag {
+    position: absolute;
+    right: 5px;
+    bottom: 8px;    
+}
+
+.task-age-tag .ant-tag{
+    color: #fff;
+}
+
+.task-age-tag.yound-age .ant-tag {
+    background-color: #87D068
+}
+
+.task-age-tag.old-age .ant-tag {
+    background-color: #F50;
+}
+
+.task-age-tag.perm-age .ant-tag {
+    background-color: #AD0101;
+}
+
+.task-type-tag {
+    position: absolute;
+    left: 20px;
+    //top: 28%;
+    top: 36px;
+    border: 0;
+    background-color: rgb(250,250,250)
 }

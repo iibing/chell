@@ -35,8 +35,11 @@ let webpackConfig = {
                 loader: 'url-loader',
                 query: {
                     limit: 1000,
-                    name: 'img/phones/[name].[ext]'
+                    name: 'img/[name].[ext]'
                 }
+            }, {
+                test: /\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9=&.]+)?$/,
+                loader: 'file-loader'
             }
         ]
     },

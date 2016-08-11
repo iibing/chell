@@ -20,7 +20,7 @@ class TaskModal extends React.Component {
         return (
             <div className='task-creation-modal'>
                 <Modal 
-                    title="Create New Task" 
+                    title="Create Task" 
                     wrapClassName="vertical-center-modal" 
                     closable={false} 
                     width={700} 
