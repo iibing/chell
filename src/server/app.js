@@ -4,11 +4,9 @@ const config = require('../../config')
 const express = require('express')
 let app = express()
 
-const log4js = require('../../config/log4js.config')
-const logger = log4js.getLogger('log-file')
-
-const path = require('path')
-const filename = path.basename(__filename)
+const Logger = require('./utils/logger').Logger
+const logger = new Logger(__filename)
+const log4js = logger.getLog4js()
 
 const routers = require('./routers')
 let router = null
@@ -47,7 +45,7 @@ if (__HMR__) {
     // Add log4js as a middleware in express, development only.
     // Better not add it into HMR dev server as lots of HMR requests will be in the log
     if (__DEV__) {
-        app.use(log4js.connectLogger(logger))
+        app.use(log4js.connectLogger(logger.getLogger))
     }
 
     router = routers()
@@ -65,9 +63,9 @@ if (router) {
 const {port} = config.server
 app.listen(port, error => {
     if (error) {
-        logger.error(`${filename} -${error}`)
+        logger.error(error)
     } else {
-        logger.info(`${filename} - Server starts. Env: >${config.env}< | Port: ${port}`)
+        logger.info(`Server starts. Env: >${config.env}< | Port: ${port}`)
     }
 })
 
