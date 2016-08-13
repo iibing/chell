@@ -1,11 +1,8 @@
-const mongoose = require('mongoose')
+let mongoose = require('mongoose')
 const config = require('../../../config')
 
 const Logger = require('../utils/logger')
 const logger = new Logger(__filename)
-
-const path = require('path')
-const filename = path.basename(__filename)
 
 mongoose.connect(config.database.url, {
     server: {
@@ -13,9 +10,10 @@ mongoose.connect(config.database.url, {
     }
 }, (err) => {
     if (err) {
-        logger.error(`${filename} unable to connect to db, error ${err.message}`)
+        logger.error(`Unable to connect to db, error ${err.message}`)
         process.exit(1)
     }
+    logger.info('connect to db sucessfully')
 })
 
 exports.Task = require('./task')
