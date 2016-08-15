@@ -7,7 +7,7 @@
     "node": "6.3.1"
   },
   "scripts": {
-    "hmr": "cross-env NODE_ENV=HMR node src/server/app.js",
+    "hmr": "cross-env NODE_ENV=HMR node --harmony src/server/app.js",
     "start": "node src/server/app.js",
     "build": "cross-env NODE_ENV=production webpack --config config/webpack.config.js -p --profile --progress --colors --display-error-details",
     "postinstall": "node_modules/.bin/webpack -p --config config/webpack.config.js --progress"
@@ -37,6 +37,7 @@
   "dependencies": {
     "antd": "^1.7.0",
     "babel-polyfill": "^6.13.0",
+    "body-parser": "^1.15.2",
     "classnames": "^2.2.5",
     "compression": "^1.6.2",
     "express": "^4.14.0",

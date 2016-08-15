@@ -1,7 +1,8 @@
 import React from 'react'
 import {render} from 'react-dom'
 import MainBody from './components/MainBody'
-import TaskPanel from './components/TaskPanel'
+//import TaskPanel from './components/TaskPanel'
+import TaskPanelContainer from './containers/TaskPanelContainer'
 import ChatPanel from './components/ChatPanel'
 import CalendarPanel from './components/CalendarPanel'
 import SettingsPanel from './components/SettingsPanel'
@@ -23,7 +24,7 @@ render(
         <Router history={history}>
             <Route path="/" component={MainBody}>
                 <IndexRoute />
-                <Route path="/tasks" component={TaskPanel}/>
+                <Route path="/tasks" component={TaskPanelContainer}/>
                 <Route path="/team" component={ChatPanel}/>
                 <Route path='/calendar' component={CalendarPanel} />
                 <Route path='/settings' component={SettingsPanel} />

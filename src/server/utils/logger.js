@@ -5,10 +5,9 @@ const path = require('path')
 /* 
     A wrapper of logger in log4js. this will print the file name before every log message
 */
-
 class Logger {
     constructor(fileName){
-        this.fileName = path.basename(fileName)
+        this.fileName = path.basename(fileName) + '-'
     }
     trace(...messages) {
         filelogger.trace(this.fileName,...messages)

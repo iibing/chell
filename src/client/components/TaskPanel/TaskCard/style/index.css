@@ -26,6 +26,7 @@
 .task-card .ant-card-body {
     border-left: 5px solid;
     border-radius: 3px;
+    border-top-left-radius: 0; 
 }
 .task-card.task-green-left-boarder .ant-card-body {
     border-left-color: green;
@@ -57,7 +58,7 @@
 .task-more-action {
     float: left;
     background-color: rgba(255, 0, 0, 0);
-    margin-top: -8px;
+    margin-top: -2px;
     padding-right: 10px;
     width: 40%;
 }
@@ -82,11 +83,14 @@
 .task-card-content:hover {
     margin-left: 0;
 }
+.task-card-summary {
+    margin-top: -15px;
+}
 
 .task-age-tag {
     position: absolute;
-    right: 5px;
-    bottom: 8px;    
+    right: 0px;
+    bottom: 3px;    
 }
 
 .task-age-tag .ant-tag{

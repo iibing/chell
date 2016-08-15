@@ -1,20 +1,25 @@
 const Logger = require('../utils/logger').Logger
 const logger = new Logger(__filename)
 
-//const Task = require('../model').Task
+const Task = require('../model').Task
 
-const createNewTask =(tasks) => {
-    tasks.save((err) => {
-        if(err) {
+const createNewTask = (task, callback) => {
+    let taskEntity = new Task(task)
+    taskEntity.save((err,taskEntity) => {
+        if (err) {
             logger.error(err)
-            throw err
+            callback(err)
+        } else {
+            callback(null,taskEntity)
         }
     })
 }
-/*
-const findTasks = (projectKey) => {
-    return Task.find({project:projectKey})
+
+const findTasksByProjectKey = (projectKey, callback) => {
+    Task.find({
+        project: projectKey
+    }, callback)
 }
-*/
 
 exports.createNewTask = createNewTask
+exports.findTasksByProjectKey = findTasksByProjectKey

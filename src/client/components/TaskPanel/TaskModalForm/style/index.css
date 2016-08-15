@@ -12,3 +12,14 @@
     -webkit-text-stroke-width: 0.2px;
     -moz-osx-font-smoothing: grayscale;
 }
+
+.task-submit-btn.ant-btn-lg {
+    border-radius: 2px;
+}
+
+.task-submit-btn {
+    position: absolute;
+    right: 45px;
+    bottom: 42px;
+    //box-shadow: 0 0 4px rgba(0, 0, 0, .14), 0 4px 8px rgba(0, 0, 0, .28);
+}

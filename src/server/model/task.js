@@ -1,21 +1,72 @@
 let mongoose = require('mongoose')
+let Sequence = require('./sequence').Sequence
 
-const TaskSchema = new mongoose.Schema({
-    key: String,
-    project: String,
-    summary: String,
-    description: String,
-    priority: Number,
-    score: Number,
-    type: String,
-    dueDate: Date,
+let TaskSchema = new mongoose.Schema({
+    key: {
+        type: String
+    },
+    project: {
+        type: String,
+        required: [true, 'Project name is missing']
+    },
+    summary: {
+        type: String,
+        required: true
+    },
+    description: {
+        type: String
+    },
+    priority: {
+        type: Number,
+        min: 1,
+        max: 3,
+        required: true
+    },
+    score: {
+        type: Number,
+        min: 0
+    },
+    type: {
+        type: String,
+        required: true
+    },
+    dueDate: {
+        type: Date
+    },
     assignee: String,
-    createdBy: String,
-    createdDate: Date,
-    status: String
+    createdBy: {
+        type: String,
+        required: true
+    },
+    createdDate: {
+        type: Date,
+        required: true
+    },
+    status: {
+        type: String,
+        enum: ['Open', 'WIP', 'Done']
+    }
 })
+
 TaskSchema.index({
     key: 1
 }, {unique: true})
+
+// Get the sequence before saving doc
+// http://stackoverflow.com/questions/28357965/mongoose-auto-increment
+TaskSchema.pre('save', (doc, next) => {
+    Sequence.findByIdAndUpdate({
+        _id: doc.project
+    }, {
+        $inc: {
+            seq: 1
+        }
+    }, (err, sequence) => {
+        if (err) {
+            return next(err)
+        }
+        doc.key = doc.project + '-' + sequence.seq
+    })
+})
 
 module.exports = mongoose.model('Task', TaskSchema)

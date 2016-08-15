@@ -35,7 +35,7 @@ class TaskLane extends React.Component{
         return (
             <section className={laneClassName} onDragOver={this.dragOver} onDragEnter={this.dragEnter} onDragEnd={this.dragEnd}>
                 <TaskLaneHeader laneName={this.props.laneName} taskNumber={tasks?tasks.length:0}/>
-                {tasks? tasks.map(task => <TaskCard key={task.id} task={task}/>):''}
+                {tasks? tasks.map(task => <TaskCard key={task.key} task={task}/>):''}
             </section>
         )
     }

@@ -1,7 +1,8 @@
 let mongoose = require('mongoose')
 const config = require('../../../config')
 
-const Logger = require('../utils/logger')
+const Logger = require('../utils/logger').Logger
+
 const logger = new Logger(__filename)
 
 mongoose.connect(config.database.url, {
@@ -19,3 +20,4 @@ mongoose.connect(config.database.url, {
 exports.Task = require('./task')
 exports.Project = require('./project')
 exports.User = require('./user')
+exports.Sequence = require('./sequence')

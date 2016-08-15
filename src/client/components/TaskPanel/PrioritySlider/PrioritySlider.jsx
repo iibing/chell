@@ -2,19 +2,19 @@ import React from 'react'
 import {Slider} from 'antd'
 
 const prioritySlider = {
-    0: {
+    1: {
         style: {
             color: 'green'
         },
         label: 'Low'
     },
-    1: {
+    2: {
         style: {
             color: '#fa0'            
         },
         label: 'Medium'
     },
-    2: {
+    3: {
         style: {
             color: 'red',
             'font-weight': 'bold'
@@ -24,8 +24,15 @@ const prioritySlider = {
 }
 
 const priorities = ['Low', 'Medium', 'High']
-const priorityTipformatter = (value) => priorities[value]
 
-const PrioritySlider = () => (<Slider marks={prioritySlider} dots={true} included={false} defaultValue={1} max={2} tipFormatter={priorityTipformatter}/>)
+const priorityTipformatter = (value) => {
+    if(value > priorities.length) {
+        return undefined
+    } else {
+        return priorities[value-1]
+    }
+}
+
+const PrioritySlider = () => (<Slider marks={prioritySlider} dots={true} included={false} defaultValue={2} max={3} min={1} tipFormatter={priorityTipformatter}/>)
 
 export default PrioritySlider

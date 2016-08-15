@@ -1,14 +1,15 @@
 import React, {PropTypes} from 'react'
-import {Card, Button, Tag, Icon} from 'antd'
+import {Card, Button, Tag} from 'antd'
 import classNames from 'classnames'
 import styleIgnored from './style'
 
 const propTypes = {
-    task: PropTypes.shape({id: PropTypes.number.isRequired, title: PropTypes.string.isRequired, summary: PropTypes.string.isRequired, priority: PropTypes.number.isRequired, score: PropTypes.number.isRequired}).isRequired
+    task: PropTypes.shape({key: PropTypes.string.isRequired, project: PropTypes.string.isRequired, summary: PropTypes.string.isRequired, priority: PropTypes.number.isRequired, score: PropTypes.number.isRequired}).isRequired
 }
 
 const priorityColors = ['red', 'yellow', 'green']
-//const taskPriorities = ['H', 'M', 'L']
+
+const totalMillisecondsPerDay = 24 * 60 * 60 * 1000
 
 class TaskCard extends React.Component {
     constructor(props) {
@@ -24,33 +25,48 @@ class TaskCard extends React.Component {
         this.dragged = e.currentTarget
         e.dataTransfer.effectAllowed = 'move'
         //e.dataTransfer.setData('text/html', e.currentTarget)
-        e.dataTransfer.setData('text/plain', this.props.task.id)
+        e.dataTransfer.setData('text/plain', this.props.task.key)
         this.setState({isDragging: true})
     }
     dragEnd() {
         this.setState({isDragging: false})
     }
 
+    calculateTaskAgeText(taskAge) {
+        let taskAgeText = ''
+        if (taskAge < 1) {
+            let taskAgeByHour = taskAge * 24
+            if (taskAgeByHour < 1) {
+                let taskAgeByMinute = taskAgeByHour * 60
+                if (taskAgeByMinute < 1) {
+                    taskAgeText = 'A few moment'
+                } else {
+                    taskAgeText = `${Math.floor(taskAgeByMinute)} m`
+                }
+            } else {
+                taskAgeText = `${Math.floor(taskAgeByHour)} h`
+            }
+        } else {
+            taskAgeText = `${Math.floor(taskAge)} d`
+        }
+        return taskAgeText
+    }
+
     render() {
         const task = this.props.task
         const cardClassName = classNames('task-card', {
             'task-card-dragging': this.state.isDragging
-        }, `task-${priorityColors[task.priority]}-left-boarder`)
-        //const priorityColor = priorityColors[task.priority]
-        //const taskPriority = taskPriorities[task.priority]
+        }, `task-${priorityColors[task.priority - 1]}-left-boarder`)
 
-        //const priorityTag = <Tag color={priorityColor}>{taskPriority}</Tag>
-        /*
-        const scoreBadge = <Badge count={task.score} style={{
-            backgroundColor: '#57c5f7',
-            color: '#fff'
-        }}/>
-        */
         const assigneeAvator = <div><img src="http://www.material-ui.com/images/ok-128.jpg" className='asignee-avator'/></div>
-        
-        const tagAgeClassName = classNames('task-age-tag',{'yound-age':task.age.value < 3,'old-age':task.age.value >=3&task.age.value< 6, 'perm-age':task.age.value >= 6})
-        //const tagAgeClassName = classNames('task-age-tag')
-        
+
+        const taskAge = (new Date() - new Date(task.createdDate)) / totalMillisecondsPerDay
+        const taskAgeText = this.calculateTaskAgeText(taskAge)
+        const tagAgeClassName = classNames('task-age-tag', {
+            'yound-age': taskAge < 3,
+            'old-age': taskAge >= 3 & taskAge < 6,
+            'perm-age': taskAge >= 6
+        })
         const cardContent = (
             <div className='task-card-content'>
                 <div className='task-more-action' draggable={false}>
@@ -58,23 +74,22 @@ class TaskCard extends React.Component {
                     <Button className='task-more-action-btn' size='large' type="primary" shape="circle" icon="edit"/>
                     <Button className='task-more-action-btn' size='large' type="primary" shape="circle" icon="eye"/>
                 </div>
-                <div>{task.summary}</div>
+                <div className='task-card-summary'>{task.summary}</div>
                 <div className={tagAgeClassName}>
-                    <Tag >{task.age.text}</Tag>
+                    <Tag >{taskAgeText}</Tag>
                 </div>
             </div>
         )
 
         return (
             <div className='task-card-container'>
-                <Card title={task.title} className={cardClassName} extra={assigneeAvator} draggable={true} onDragStart={this.dragStart} onDragEnd={this.dragEnd}>
+                <Card title={task.key} className={cardClassName} extra={assigneeAvator} draggable={true} onDragStart={this.dragStart} onDragEnd={this.dragEnd}>
                     {this.state.isDragging
                         ? <div>{task.summary}</div>
                         : cardContent}
+                    <Tag className='task-type-tag'>{task.type}</Tag>
                 </Card>
-                <Tag className='task-type-tag'>{task.type}</Tag>
             </div>
-
         )
     }
 }

@@ -1,4 +1,11 @@
 .task-panel-header {
     margin-left: 5px;
     margin-bottom: 5px;
+    width: 180px;
+}
+
+.project-header-title {
+    display: inline;
+    width: 150px;
+    padding-right: 5px;
 }

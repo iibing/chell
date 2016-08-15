@@ -4,6 +4,10 @@ const config = require('../../config')
 const express = require('express')
 let app = express()
 
+const bodyParser = require('body-parser')
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: false}))
+
 const Logger = require('./utils/logger').Logger
 const logger = new Logger(__filename)
 const log4js = logger.getLog4js()
