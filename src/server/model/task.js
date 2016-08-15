@@ -1,5 +1,5 @@
 let mongoose = require('mongoose')
-let Sequence = require('./sequence').Sequence
+let Sequence = require('./sequence')
 
 let TaskSchema = new mongoose.Schema({
     key: {
@@ -54,9 +54,12 @@ TaskSchema.index({
 
 // Get the sequence before saving doc
 // http://stackoverflow.com/questions/28357965/mongoose-auto-increment
-TaskSchema.pre('save', (doc, next) => {
+TaskSchema.pre('save', (next) => {
+    console.log('pre-save---------------')
+    console.log(this)
+    let self = this
     Sequence.findByIdAndUpdate({
-        _id: doc.project
+        _id: 'CHELL'
     }, {
         $inc: {
             seq: 1
@@ -65,7 +68,8 @@ TaskSchema.pre('save', (doc, next) => {
         if (err) {
             return next(err)
         }
-        doc.key = doc.project + '-' + sequence.seq
+        console.log(sequence.seq)
+        self.key = self.project + '-' + sequence.seq
     })
 })
 

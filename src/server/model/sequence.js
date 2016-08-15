@@ -5,6 +5,4 @@ let SequenceSchema = new mongoose.Schema({
     seq: {type: Number, default: 1}
 })
 
-let sequence = mongoose.model('Sequence',SequenceSchema)
-
-exports.sequence = sequence
+module.exports = mongoose.model('Sequence',SequenceSchema)

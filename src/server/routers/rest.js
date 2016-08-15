@@ -2,7 +2,10 @@ const jsonContentType = {
     'Content-Type': require('../utils/mime').types.json
 }
 
-const findTasksByProjectKey = require('../service/task').findTasksByProjectKey
+const taskService = require('../service/task')
+
+const findTasksByProjectKey = taskService.findTasksByProjectKey
+const createNewTask = taskService.createNewTask
 
 const Logger = require('../utils/logger').Logger
 const logger = new Logger(__filename)
@@ -26,12 +29,19 @@ const restRouter = (router) => {
             }
         })
     })
-    
-    router.post('/api/tasks/',(req,res) => {
-        console.log(req.body.task)
-        res.writeHead(200, jsonContentType)
-        res.write(JSON.stringify(req.body.task))
-        res.end()
+
+    router.post('/api/tasks/', (req, res) => {
+        
+        createNewTask(req.body.task, (err, taskEntity) => {
+            if (err) {
+                logger.error('Failed to save tasks, error details:' + err)
+            } else {
+                res.writeHead(200, jsonContentType)
+                res.write(JSON.stringify(taskEntity))
+                res.end()
+            }
+        })
+
     })
 
 }
