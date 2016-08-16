@@ -1,7 +1,9 @@
 .chat-input-pannel {
     width: 100%;
     border: 1px solid rgb(217, 217, 217);
-    border-radius: 0 0 5px 5px;
+    //border-radius: 0 0 5px 5px;
+    border-left: 0;
+    border-radius: 0;
     background: #eee;
 }
 .chat-input-area {

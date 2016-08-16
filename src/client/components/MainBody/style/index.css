@@ -1,17 +1,20 @@
 html, body {
     margin: 0;
     background-color: #ececec;
+    min-height: 100%;
     height: 100%;
+    position: absolute;
     //overflow: hidden;
 }
 .layout-aside {
     position: relative;
     min-height: 100%;
 }
-div::-webkit-scrollbar {
+
+::-webkit-scrollbar {
     width: 5px;
 }
-div::-webkit-scrollbar-thumb {
+::-webkit-scrollbar-thumb {
     border-radius: 9px;
     -webkit-box-shadow: inset 0 0 3px #888;
     box-shadow: inset 0 0 3px #888;

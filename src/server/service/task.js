@@ -4,6 +4,16 @@ const logger = new Logger(__filename)
 const Task = require('../model').Task
 
 const createNewTask = (task, callback) => {
+    
+    Task.create(task, (err, task) => {
+        if (err) {
+            logger.error(err)
+            callback(err)
+        } else {
+            callback(null,task)
+        }
+    })
+    /*
     let taskEntity = new Task(task)
     taskEntity.save((err,taskEntity) => {
         if (err) {
@@ -13,6 +23,7 @@ const createNewTask = (task, callback) => {
             callback(null,taskEntity)
         }
     })
+    */
 }
 
 const findTasksByProjectKey = (projectKey, callback) => {

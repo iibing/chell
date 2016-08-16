@@ -54,9 +54,13 @@ TaskSchema.index({
 
 // Get the sequence before saving doc
 // http://stackoverflow.com/questions/28357965/mongoose-auto-increment
-TaskSchema.pre('save', (next) => {
-    console.log('pre-save---------------')
-    console.log(this)
+// Don't use Arraw function in the callback of pre, otherwise 'this' will be undefined
+// https://github.com/Automattic/mongoose/issues/3333
+TaskSchema.pre('save', function(next) {
+    // Update
+    if(this.key) {
+        next()
+    }
     let self = this
     Sequence.findByIdAndUpdate({
         _id: 'CHELL'
@@ -66,11 +70,16 @@ TaskSchema.pre('save', (next) => {
         }
     }, (err, sequence) => {
         if (err) {
+            console.err(`error when saving task ${self}`)
             return next(err)
         }
-        console.log(sequence.seq)
         self.key = self.project + '-' + sequence.seq
+        next()
     })
+})
+
+TaskSchema.post('save', function(doc) {
+    console.log(`${doc.key} is saved`)
 })
 
 module.exports = mongoose.model('Task', TaskSchema)

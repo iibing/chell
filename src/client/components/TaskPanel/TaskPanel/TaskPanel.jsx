@@ -8,7 +8,8 @@ import styleIgnored from './style'
 
 const propTypes = {
     tasks: PropTypes.array,
-    fetchTasks: PropTypes.func.isRequired
+    fetchTasks: PropTypes.func.isRequired,
+    initTaskForm: PropTypes.func.isRequired
 }
 
 class TaskPanel extends React.Component {
@@ -28,6 +29,12 @@ class TaskPanel extends React.Component {
             }
         ]
         
+        this.defaultFormdata = {
+            project: this.state.project.name,
+            type: 'feature',
+            priority:2
+        }
+                
         this.showCreateTaskModal = this.showCreateTaskModal.bind(this)
         this.setModal2Visible = this.setModal2Visible.bind(this)
         this.switchProject = this.switchProject.bind(this)
@@ -37,6 +44,7 @@ class TaskPanel extends React.Component {
         this.props.fetchTasks(this.state.project.name)
     }
     showCreateTaskModal() {
+        this.props.initTaskForm(this.defaultFormdata)
         this.setModal2Visible(true)
     }
     setModal2Visible(visible) {
@@ -47,11 +55,10 @@ class TaskPanel extends React.Component {
         project.name !== this.state.project.name && this.setState({project: project})
     }
     render() {
-        console.log(this.props.tasks)
         return (
             <div className='task-pannel'>
                 <TaskPanelHeader project={this.state.project} projects={this.projects} switchProject={this.switchProject}/>
-                <Row gutter={5}>
+                <Row gutter={16}>
                     <Col span={7}><TaskLane tasks={this.props.tasks.filter(task => task.status === 'Open')} laneName='TODO'/></Col>
                     <Col span={7}><TaskLane tasks={this.props.tasks.filter(task => task.status === 'WIP')} laneName='WIP'/></Col>
                     <Col span={7}><TaskLane tasks={this.props.tasks.filter(task => task.status === 'DONE')} laneName='DONE'/></Col>

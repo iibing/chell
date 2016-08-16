@@ -33,6 +33,6 @@ const priorityTipformatter = (value) => {
     }
 }
 
-const PrioritySlider = () => (<Slider marks={prioritySlider} dots={true} included={false} defaultValue={2} max={3} min={1} tipFormatter={priorityTipformatter}/>)
+const PrioritySlider = (props) => (<Slider {...props} marks={prioritySlider} dots={true} included={false} defaultValue={2} max={3} min={1} tipFormatter={priorityTipformatter}/>)
 
 export default PrioritySlider

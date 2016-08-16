@@ -24,7 +24,7 @@ class ChatPanel extends React.Component {
         return (
             <div>
                 <h2>Chat</h2>
-                <Row gutter={5}>
+                <Row gutter={0}>
                     <Col span={6}>
                         <ContactList recentContacts={this.recentContacts}/>
                     </Col>

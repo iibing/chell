@@ -1,5 +1,8 @@
 .calendar-pannel {
     position: relative;
+    //overflow-x: auto;
+    //overflow-y: auto;
+    //height: 100%;
 }
 
 .calendar-pannel-head {

@@ -2,7 +2,9 @@
     position: relative;
     height: 51px;
     border: 1px solid rgb(217, 217, 217);
-    border-radius: 4px;
+    //border-radius: 4px;
+    border-radius: 0;
+    border-left: 0;
     border-bottom: 0;
 }
 .chat-header-title {

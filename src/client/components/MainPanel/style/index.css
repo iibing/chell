@@ -13,7 +13,8 @@
     background: rgb(246,246,246);
     padding: 24px 24px 10px 24px;
     border-radius: 3px;
-    min-height: 665px;
+    //min-height: 665px;
     overflow: auto;
+    height: 90%;
 }
 

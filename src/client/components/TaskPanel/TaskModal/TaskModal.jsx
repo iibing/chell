@@ -16,6 +16,10 @@ class TaskModal extends React.Component {
     setModal2Visible(visible) {
         this.props.setModal2Visible(visible)
     }
+    submitForm(values) {
+        console.log(values)
+        this.props.setModal2Visible(false)
+    }
     render() {
         return (
             <div className='task-creation-modal'>
@@ -30,7 +34,7 @@ class TaskModal extends React.Component {
                     cancelText='Cancel' 
                     onOk={() => this.setModal2Visible(false)} 
                     onCancel={() => this.setModal2Visible(false)}>
-                    <TaskModalForm submitForm={() => this.setModal2Visible(false)}/>
+                    <TaskModalForm onSubmit={(values) => this.submitForm(values)}/>
                 </Modal>
             </div>
         )

@@ -7,10 +7,10 @@ const propTypes = {
     selections: PropTypes.array.isRequired,
     defaultValue: PropTypes.string.isRequired
 }
-const Selection = ({selections, defaultValue}) => (
-    <Select id="projectSelect" size="large" defaultValue={defaultValue}>
-        {selections.map(selection => (
-            <Option value={selection.value}>{selection.text || selection.value}</Option>
+const Selection = (props) => (
+    <Select id="projectSelect" size="large" {...props}>
+        {props.selections.map(selection => (
+            <Option key={selection.value} value={selection.value}>{selection.text || selection.value}</Option>
         ))}
     </Select>
 )

@@ -31,7 +31,6 @@ const restRouter = (router) => {
     })
 
     router.post('/api/tasks/', (req, res) => {
-        
         createNewTask(req.body.task, (err, taskEntity) => {
             if (err) {
                 logger.error('Failed to save tasks, error details:' + err)
@@ -41,7 +40,6 @@ const restRouter = (router) => {
                 res.end()
             }
         })
-
     })
 
 }

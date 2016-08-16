@@ -1,5 +1,5 @@
 import {connect} from 'react-redux'
-import {fetchTasks} from '../actions'
+import {fetchTasks, initTaskForm} from '../actions'
 import TaskPanel from '../components/TaskPanel'
 
 const mapStateTopProps = (state) => {
@@ -8,7 +8,8 @@ const mapStateTopProps = (state) => {
 
 const mapDistpatchTopProps = (dispatch) => {
     return {
-        fetchTasks: (taskName) => dispatch(fetchTasks(taskName))
+        fetchTasks: (taskName) => dispatch(fetchTasks(taskName)),
+        initTaskForm: (taskForm) => dispatch(initTaskForm(taskForm))
     }
 }
 
