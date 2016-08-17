@@ -1,5 +1,5 @@
 const config = {
-    isDevToolEnabled: true
+    isDevToolEnabled: process.env.NODE_ENV !== 'production' && true
 } 
 
 module.exports = config
