@@ -31,15 +31,19 @@ const restRouter = (router) => {
     })
 
     router.post('/api/tasks/', (req, res) => {
-        createNewTask(req.body.task, (err, taskEntity) => {
+        let task = req.body
+        task.createdBy = 'Xiaobing'
+        createNewTask(task, (err, taskEntity) => {
             if (err) {
                 logger.error('Failed to save tasks, error details:' + err)
+                res.send('Failed')
             } else {
                 res.writeHead(200, jsonContentType)
                 res.write(JSON.stringify(taskEntity))
                 res.end()
             }
         })
+        
     })
 
 }

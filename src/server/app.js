@@ -10,7 +10,6 @@ app.use(bodyParser.urlencoded({extended: false}))
 
 const Logger = require('./utils/logger').Logger
 const logger = new Logger(__filename)
-const log4js = logger.getLog4js()
 
 const routers = require('./routers')
 let router = null
@@ -49,6 +48,7 @@ if (__HMR__) {
     // Add log4js as a middleware in express, development only.
     // Better not add it into HMR dev server as lots of HMR requests will be in the log
     if (__DEV__) {
+        const log4js = logger.getLog4js()
         app.use(log4js.connectLogger(logger.getLogger))
     }
 

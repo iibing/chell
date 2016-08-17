@@ -1,6 +1,6 @@
 'use strict'
 const path = require('path')
-const {__DEV__} = require('./index').stage
+//const {__DEV__} = require('./index').stage
 const log4js = require('log4js')
 
 const log4jsConfig = {
@@ -32,9 +32,7 @@ const log4jsConfig = {
         }
     ],
     replaceConsole: true,
-    level: __DEV__
-        ? 'DEBUG'
-        : 'INFO'
+    level: 'INFO'    
 }
 
 log4js.configure(log4jsConfig)

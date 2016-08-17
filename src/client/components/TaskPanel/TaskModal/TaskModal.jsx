@@ -5,6 +5,7 @@ import TaskModalForm from '../TaskModalForm'
 import styleIgnored from './style'
 
 const propTypes = {
+    saveTask: PropTypes.func.isRequired,
     setModal2Visible: PropTypes.func.isRequired,
     modal2Visible: PropTypes.bool.isRequired
 }
@@ -16,8 +17,8 @@ class TaskModal extends React.Component {
     setModal2Visible(visible) {
         this.props.setModal2Visible(visible)
     }
-    submitForm(values) {
-        console.log(values)
+    submitForm(task) {
+        this.props.saveTask(task)
         this.props.setModal2Visible(false)
     }
     render() {
@@ -34,7 +35,7 @@ class TaskModal extends React.Component {
                     cancelText='Cancel' 
                     onOk={() => this.setModal2Visible(false)} 
                     onCancel={() => this.setModal2Visible(false)}>
-                    <TaskModalForm onSubmit={(values) => this.submitForm(values)}/>
+                    <TaskModalForm onSubmit={(task) => this.submitForm(task)}/>
                 </Modal>
             </div>
         )

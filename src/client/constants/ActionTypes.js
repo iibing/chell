@@ -1,3 +1,4 @@
 export const CREATE_TASK = 'CREATE_TASK'
 export const RECEIVED_TASKS = 'RECEIVED_TASKS'
 export const INIT_TASK_FORM = 'INIT_TASK_FORM'
+export const TASK_SAVED = 'TASK_SAVED'

@@ -4,10 +4,10 @@ import classNames from 'classnames'
 import styleIgnored from './style'
 
 const propTypes = {
-    task: PropTypes.shape({key: PropTypes.string.isRequired, project: PropTypes.string.isRequired, summary: PropTypes.string.isRequired, priority: PropTypes.number.isRequired, score: PropTypes.number.isRequired}).isRequired
+    task: PropTypes.shape({key: PropTypes.string.isRequired, project: PropTypes.string.isRequired, summary: PropTypes.string.isRequired, priority: PropTypes.number.isRequired, score: PropTypes.number}).isRequired
 }
 
-const priorityColors = ['red', 'yellow', 'green']
+const priorityColors = ['green', 'yellow','red']
 
 const totalMillisecondsPerDay = 24 * 60 * 60 * 1000
 

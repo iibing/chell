@@ -40,11 +40,13 @@ let TaskSchema = new mongoose.Schema({
     },
     createdDate: {
         type: Date,
-        required: true
+        required: true,
+        default: Date.now
     },
     status: {
         type: String,
-        enum: ['Open', 'WIP', 'Done']
+        enum: ['Open', 'WIP', 'Done'],
+        default: 'Open'
     }
 })
 

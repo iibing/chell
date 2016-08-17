@@ -100,5 +100,5 @@ export default reduxForm({
     fields: ['project','type','summary','description', 'priority'],
     validate
 }, state => ({
-    initialValues: state.taskForm.formData
+    initialValues: state.taskForm
 }))(TaskModalForm)

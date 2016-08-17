@@ -1,13 +1,18 @@
-import {RECEIVED_TASKS} from '../constants/ActionTypes'
+import {RECEIVED_TASKS, TASK_SAVED} from '../constants/ActionTypes'
 
+/*
 const initialState = {
     tasks: []
 }
 
-const tasks = (state = initialState, action) => {
+*/
+
+const tasks = (state = [], action) => {
     switch (action.type) {
         case RECEIVED_TASKS:
-            return Object.assign({}, state, {tasks: action.tasks})
+            return action.tasks
+        case TASK_SAVED:
+            return [action.task,...state]
         default:
             return state
     }

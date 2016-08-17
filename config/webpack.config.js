@@ -7,7 +7,7 @@ const config = require('./index')
 /* Common configuration */
 let webpackConfig = {
     entry: {
-        main: [path.resolve(config.path.entry, './main')],
+        main: [path.resolve(config.path.entry, './index')],
         vendor: ['react', 'react-dom']
     },
     output: {

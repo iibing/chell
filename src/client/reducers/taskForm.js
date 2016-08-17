@@ -1,9 +1,9 @@
 import {INIT_TASK_FORM} from '../constants/ActionTypes'
 
-const taskForm = (state = {formData:{}}, action) => {
+const taskForm = (state = {}, action) => {
     switch (action.type) {
         case INIT_TASK_FORM:
-            return {formData: action.formData}
+            return action.formData
         default:
             return state
     }

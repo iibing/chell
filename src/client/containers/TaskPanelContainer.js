@@ -1,15 +1,19 @@
 import {connect} from 'react-redux'
-import {fetchTasks, initTaskForm} from '../actions'
+import {reset} from 'redux-form'
+import {fetchTasks, initTaskForm, saveTask} from '../actions'
 import TaskPanel from '../components/TaskPanel'
 
+
 const mapStateTopProps = (state) => {
-    return {tasks: state.tasks.tasks}
+    return {tasks: state.tasks, taskForm: state.taskForm}
 }
 
 const mapDistpatchTopProps = (dispatch) => {
     return {
         fetchTasks: (taskName) => dispatch(fetchTasks(taskName)),
-        initTaskForm: (taskForm) => dispatch(initTaskForm(taskForm))
+        initTaskForm: (taskForm) => dispatch(initTaskForm(taskForm)),
+        saveTask: (task) => dispatch(saveTask(task)),
+        resetTaskForm: ()=> dispatch(reset('task'))
     }
 }
 
