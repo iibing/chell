@@ -1,4 +1,5 @@
 import * as types from '../constants/ActionTypes'
+import openNotification from '../components/Notification'
 
 export const receivedTasks = tasks => ({type: types.RECEIVED_TASKS, tasks: tasks})
 
@@ -11,7 +12,21 @@ export const fetchTasks = (projectName) => {
 export const initTaskForm = formData => ({type: types.INIT_TASK_FORM,formData:formData})
 
 export const saveTask = (task) => {
-    return dispatch => fetch('/api/tasks', {method:'post',headers:{'Content-type':'application/json'},credentials: 'include', body: JSON.stringify(task)}).then(response => response.json()).then(task => dispatch(taskCreated(task))).catch(e => console.error(e.toString()))
+    return dispatch => fetch('/api/tasks', {method:'post',headers:{'Content-type':'application/json'},credentials: 'include', body: JSON.stringify(task)})
+        .then(response => response.json())
+        .then(
+            task => {
+                if(task.key) {
+                    openNotification('success', 'Great', `${task.key} is created`)
+                    dispatch(taskCreated(task))
+                } else {
+                    openNotification('error', 'Oops!', 'Some error happened, task is not saved')
+                }
+                
+            }
+            
+        )
+        .catch(() => openNotification('error', 'Oops!', 'Some error happened, task is not saved'))
 }
 
 export const taskCreated = (task) => ({type: types.TASK_SAVED, task:task})

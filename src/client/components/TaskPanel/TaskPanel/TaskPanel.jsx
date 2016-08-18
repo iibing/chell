@@ -67,7 +67,7 @@ class TaskPanel extends React.Component {
     }
     saveTask(task) {
         this.props.saveTask(task)
-        openNotification('success', 'Great', 'Sucessfully create task')
+        //openNotification('success', 'Great', 'Sucessfully create task')
     }
     render() {
         return (
